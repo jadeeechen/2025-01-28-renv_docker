@@ -1,0 +1,16 @@
+getwd()
+#install.packages('renv')
+renv:init()
+library(renv)
+renv::init()
+install.packages("dplyr")
+renv::snapshot()
+install.packages("readr")
+library(readr)
+read_csv("data/data.csv")
+renv::snapshot()
+df <- read_csv("data/data.csv")
+
+df |>
+  dplyr::select(first)
+renv::snapshot()
